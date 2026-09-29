@@ -96,7 +96,7 @@
   /* cycle diagram */
   .stage { position: relative; width: 100%; aspect-ratio: 1 / 1.1; max-width: 560px; margin: 0 auto; }
   @media (min-width: 900px) { .stage { aspect-ratio: 1 / .92; margin: 0 0 0 auto; transform: translate(18px, -40px); } }
-  .stage svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+  .stage #loopSvg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
   .node { position: absolute; display: flex; flex-direction: column; align-items: center; transform: translate(-50%, -50%); z-index: 2; text-align: center; }
   .node .orb { flex: none; width: var(--n, 76px); height: var(--n, 76px); border-radius: 50%; display: grid; place-items: center; color: #fff; font-size: calc(var(--n, 76px) * .36); font-weight: 800; box-shadow: var(--shadow); }
   .node .nm { font-weight: 800; font-size: 14px; margin-top: 6px; line-height: 1.2; }
