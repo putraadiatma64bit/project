@@ -27,7 +27,7 @@ a{color:inherit}
 header .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:6px 12px;padding-top:10px;padding-bottom:8px}
 .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px;letter-spacing:-.02em;text-decoration:none}
 .logo-mark{width:34px;height:34px;border-radius:10px;background:var(--violet);color:#fff;display:grid;place-items:center;font-size:13px}
-nav{order:3;flex-basis:100%;display:flex;gap:4px;font-size:14px;font-weight:600;overflow-x:auto;white-space:nowrap;scrollbar-width:none}nav::-webkit-scrollbar{display:none}nav a{text-decoration:none;color:var(--muted);padding:6px 12px;border-radius:999px}nav a:hover{color:var(--brand)}nav a.active{color:var(--brand);background:var(--brand-soft)}
+nav{order:3;flex-basis:100%;display:flex;gap:4px;font-size:14px;font-weight:600;overflow-x:auto;white-space:nowrap;scrollbar-width:none}nav::-webkit-scrollbar{display:none}nav a{text-decoration:none;color:var(--muted);padding:6px 12px;border-radius:999px;transition:background .2s,color .2s}nav a:hover{color:var(--brand)}nav a.active{color:var(--brand);background:var(--brand-soft)}
 @media(min-width:900px){header .wrap{flex-wrap:nowrap;padding-top:14px;padding-bottom:14px}nav{order:0;flex-basis:auto;overflow:visible}html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 76px)}}
 .lang{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:3px;background:var(--surface)}
 .lang button{border:0;background:transparent;color:var(--muted);font:inherit;font-size:13px;font-weight:700;padding:6px 14px;border-radius:999px;cursor:pointer}
@@ -120,7 +120,7 @@ footer{padding:28px 0 40px;color:var(--muted);font-size:13px;border-top:1px soli
 
 <header><div class="wrap">
   <a class="logo" href="#top" aria-label="Sofhia BusinessOS"><span class="logo-mark">S</span>Sofhia BusinessOS</a>
-  <nav aria-label="Menu"><a href="#harga" data-i18n="nav1">Harga</a><a href="#aktivasi" data-i18n="nav2">Aktivasi</a><a href="#akses" data-i18n="nav3">Akun Demo</a><a href="#jasa" data-i18n="nav4">Jasa</a><a href="#kontak" data-i18n="nav5">Kontak</a></nav>
+  <nav aria-label="Menu"><a href="#fitur" data-i18n="nav0">Fitur</a><a href="#harga" data-i18n="nav1">Harga</a><a href="#aktivasi" data-i18n="nav2">Aktivasi</a><a href="#akses" data-i18n="nav3">Akun Demo</a><a href="#jasa" data-i18n="nav4">Jasa</a><a href="#kontak" data-i18n="nav5">Kontak</a></nav>
   <div class="lang" role="group" aria-label="Language / Bahasa"><button type="button" data-lang="id" aria-pressed="true">ID</button><button type="button" data-lang="en" aria-pressed="false">EN</button></div>
 </div></header>
 
@@ -161,7 +161,7 @@ footer{padding:28px 0 40px;color:var(--muted);font-size:13px;border-top:1px soli
   </div>
 </div></div>
 
-<section class="band"><div class="wrap">
+<section class="band" id="fitur"><div class="wrap">
   <h2 data-i18n="modH"></h2><p class="sec-lead" data-i18n="modL"></p>
   <ul class="mods">
     <li><span class="ic"><svg class="i" aria-hidden="true"><use href="#i-cart"/></svg></span><div><b data-i18n="m1"></b><span data-i18n="m1d"></span></div></li>
@@ -173,6 +173,12 @@ footer{padding:28px 0 40px;color:var(--muted);font-size:13px;border-top:1px soli
     <li><span class="ic"><svg class="i" aria-hidden="true"><use href="#i-book"/></svg></span><div><b data-i18n="m7"></b><span data-i18n="m7d"></span></div></li>
     <li><span class="ic"><svg class="i" aria-hidden="true"><use href="#i-pie"/></svg></span><div><b data-i18n="m8"></b><span data-i18n="m8d"></span></div></li>
   </ul>
+  <h3 style="margin-top:44px;font-size:22px" data-i18n="wH"></h3><p class="sec-lead" style="margin-bottom:20px" data-i18n="wL"></p>
+  <div class="grid g3">
+    <div class="card"><h3 data-i18n="w1"></h3><p style="margin:0" data-i18n="w1d"></p></div>
+    <div class="card"><h3 data-i18n="w2"></h3><p style="margin:0" data-i18n="w2d"></p></div>
+    <div class="card"><h3 data-i18n="w3"></h3><p style="margin:0" data-i18n="w3d"></p></div>
+  </div>
 </div></section>
 
 <section><div class="wrap">
@@ -265,7 +271,7 @@ const MAIL = 'putraadiatma.64bit@gmail.com';
 const T = {
 id:{
 title:"Sofhia BusinessOS — Software Bisnis Terintegrasi",
-nav1:"Harga",nav2:"Aktivasi",nav3:"Akun Demo",nav4:"Jasa",nav5:"Kontak",
+nav0:"Fitur",nav1:"Harga",nav2:"Aktivasi",nav3:"Akun Demo",nav4:"Jasa",nav5:"Kontak",
 h1:"Kelola transaksi bisnis Anda dalam satu software",
 lead1:"<strong>Sofhia BusinessOS</strong> mengelola pembelian, penjualan, persediaan, manufaktur, pengeluaran, penggajian, hingga akuntansi dan pembagian keuntungan, baik untuk perusahaan personal atau perusahaan multi investor.",
 lead2:"Aplikasi lokal yang dipasang di komputer Anda. Bukan SaaS: database sepenuhnya Anda yang pegang.",
@@ -280,6 +286,7 @@ m1:"Pembelian",m1d:"Beli barang atau sewa jasa, tunai maupun kredit.",m2:"Penjua
 m3:"Persediaan",m3d:"Stok bertambah saat membeli, berkurang saat menjual atau diekstrak.",m4:"Manufaktur",m4d:"Kelola bahan baku menjadi barang jadi.",
 m5:"Pengeluaran",m5d:"Catat biaya operasional bisnis Anda.",m6:"Penggajian",m6d:"Kelola gaji karyawan dalam sistem yang sama.",
 m7:"Akuntansi",m7d:"Pencatatan keuangan yang terhubung dengan semua transaksi.",m8:"Pembagian keuntungan",m8d:"Laba dibagikan sebagai dividen sesuai persentase modal investor.",
+wH:"Untuk perusahaan personal maupun multi investor",wL:"Satu software untuk pemilik tunggal maupun bisnis dengan banyak penanam modal.",w1:"Perusahaan personal",w1d:"Kelola modal, transaksi, dan laba usaha Anda dalam satu alur yang sederhana.",w2:"Perusahaan multi investor",w2d:"Keuntungan dibagikan berdasarkan persentase modal masing-masing investor.",w3:"Fleksibel, bukan ERP yang kaku",w3d:"Bisnis yang kompleks tetap bisa dikelola lebih sederhana dan terintegrasi, tanpa alur kerja yang memaksa.",
 prH:"Tiga proses inti di dalam perusahaan",prL:"Inilah yang terjadi pada modal setelah masuk ke bisnis.",
 pPurD:"Modal digunakan untuk membeli barang atau menyewa jasa (tunai/kredit). Stok bertambah, modal berkurang.",
 pExtD:"Barang keluar dari stok tanpa penjualan biasa: dijual dengan harga pokok (grosir ke eceran, bahan baku manufaktur) atau dibuang (rusak/kedaluwarsa/limbah). Stok berkurang.",
@@ -311,7 +318,7 @@ ctH:"Negosiasi, konsultasi, dan kerja sama",ctL:"Hubungi pengembang langsung lew
 aria:"Diagram siklus: investor, perusahaan, laba, dividen"},
 en:{
 title:"Sofhia BusinessOS — Integrated Business Software",
-nav1:"Pricing",nav2:"Activation",nav3:"Demo Accounts",nav4:"Services",nav5:"Contact",
+nav0:"Features",nav1:"Pricing",nav2:"Activation",nav3:"Demo Accounts",nav4:"Services",nav5:"Contact",
 h1:"Manage your business transactions in one software",
 lead1:"<strong>Sofhia BusinessOS</strong> manages purchasing, sales, inventory, manufacturing, expenses, payroll, all the way to accounting and profit sharing, for personal and multi-investor companies alike.",
 lead2:"A local app installed on your computer. Not SaaS: you keep full control of your database.",
@@ -326,6 +333,7 @@ m1:"Purchasing",m1d:"Buy goods or rent services, in cash or on credit.",m2:"Sale
 m3:"Inventory",m3d:"Stock goes up when you buy and down when you sell or extract.",m4:"Manufacturing",m4d:"Turn raw materials into finished goods.",
 m5:"Expenses",m5d:"Record your operating costs.",m6:"Payroll",m6d:"Manage employee salaries in the same system.",
 m7:"Accounting",m7d:"Financial records connected to every transaction.",m8:"Profit sharing",m8d:"Profit is paid out as dividends based on each investor’s share of capital.",
+wH:"For personal and multi-investor companies",wL:"One software for sole owners and for businesses with many investors.",w1:"Personal company",w1d:"Manage your capital, transactions, and profit in one simple flow.",w2:"Multi-investor company",w2d:"Profit is shared based on each investor’s percentage of capital.",w3:"Flexible, not a rigid ERP",w3d:"Complex businesses stay simpler and integrated, without a workflow that forces your hand.",
 prH:"Three core processes inside the company",prL:"This is what happens to capital once it enters the business.",
 pPurD:"Capital is used to buy goods or rent services (cash/credit). Stock increases, capital decreases.",
 pExtD:"Goods leave stock without a normal sale: sold at cost (wholesale to retail, manufacturing raw materials) or discarded (damaged/expired/waste). Stock decreases.",
@@ -375,12 +383,25 @@ document.getElementById('yr').textContent=new Date().getFullYear();
 /* highlight menu aktif saat scroll */
 (function(){
   const links=[...document.querySelectorAll('nav a')];
-  if(!('IntersectionObserver' in window))return;
-  const io=new IntersectionObserver(es=>es.forEach(e=>{
-    if(!e.isIntersecting)return;
-    links.forEach(a=>{const on=a.getAttribute('href')==='#'+e.target.id;a.classList.toggle('active',on);if(on)a.setAttribute('aria-current','true');else a.removeAttribute('aria-current')});
-  }),{rootMargin:'-35% 0px -60% 0px'});
-  links.forEach(a=>{const s=document.querySelector(a.getAttribute('href'));if(s)io.observe(s)});
+  const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+  let cur=-2,lock=false,ticking=false,t;
+  const set=i=>{if(i===cur)return;cur=i;links.forEach((a,k)=>{const on=k===i;a.classList.toggle('active',on);if(on)a.setAttribute('aria-current','true');else a.removeAttribute('aria-current')})};
+  function update(){
+    if(lock)return;
+    const atBottom=window.innerHeight+window.scrollY>=document.documentElement.scrollHeight-4;
+    const line=window.innerHeight*0.35;
+    let idx=-1;
+    secs.forEach((s,k)=>{if(s&&s.getBoundingClientRect().top<=line)idx=k});
+    if(atBottom)idx=secs.length-1;
+    set(idx);
+  }
+  addEventListener('scroll',()=>{
+    if(lock){clearTimeout(t);t=setTimeout(()=>{lock=false;update()},150)}
+    else if(!ticking){ticking=true;requestAnimationFrame(()=>{ticking=false;update()})}
+  },{passive:true});
+  addEventListener('resize',update);
+  links.forEach((a,k)=>a.addEventListener('click',()=>{lock=true;set(k);clearTimeout(t);t=setTimeout(()=>{lock=false;update()},700)}));
+  update();
 })();
 
 /* activation form */
