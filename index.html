@@ -80,6 +80,11 @@ h3{margin:0 0 6px;font-size:18px}
 .price{display:grid;gap:2px;margin:6px 0 12px}
 .price b{font-size:26px;letter-spacing:-.02em;line-height:1.2}.price small{color:var(--muted);font-size:13px}
 .price .row{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.sendrow{display:flex;flex-wrap:wrap;gap:10px;align-items:stretch}.sendrow .btn{flex:1 1 220px;width:auto}
+.mailto{flex:1 1 280px;display:flex;flex-direction:column;justify-content:center;gap:4px;border:1.5px dashed var(--brand);border-radius:14px;padding:8px 14px;background:var(--brand-soft)}
+.mailto .lb{font-size:12px;color:var(--muted);font-weight:700}.mailto .ad{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.mailto code{font-family:ui-monospace,Consolas,monospace;font-size:14px;font-weight:700;color:var(--ink);word-break:break-all;user-select:all}
+.mini{font:inherit;font-size:12px;font-weight:700;color:var(--brand);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:3px 12px;cursor:pointer}.mini:hover{border-color:var(--brand)}
 .card ul{margin:0;padding-left:18px;color:var(--muted);font-size:14.5px}.card li{margin-bottom:4px}
 .step{counter-increment:s}
 .step::before{content:counter(s);display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--brand);color:var(--brand-ink);font-weight:800;margin-bottom:10px}
@@ -132,7 +137,7 @@ footer{padding:28px 0 40px;color:var(--muted);font-size:13px;border-top:1px soli
     <p class="lead" data-i18n="lead2"></p>
     <div class="badges"><span class="badge" data-i18n="b1"></span><span class="badge" data-i18n="b2"></span><span class="badge" data-i18n="b3"></span></div>
     <div class="dl-list" id="download">
-      <a class="btn" href="https://bit.ly/4zW7V61" target="_blank" rel="noopener">
+      <a class="btn" href="https://bit.ly/4hZKscA" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 5.5 10.5 4.4v7.1H3zM11.5 4.3 21 3v8.5h-9.5zM3 12.5h7.5v7.1L3 18.5zM11.5 12.5H21V21l-9.5-1.3z"/></svg>
         <span><span class="t1"><span data-i18n="dl"></span> — Multi Currency</span><span class="t2" data-i18n="trialS"></span></span><span class="go" data-i18n="dl"></span>
       </a>
@@ -197,7 +202,7 @@ footer{padding:28px 0 40px;color:var(--muted);font-size:13px;border-top:1px soli
     <div class="card"><div class="tagline" data-i18n="trT"></div><h3>BusinessOS Trial</h3>
       <div class="price"><b data-i18n="free"></b><small data-i18n="trSm"></small></div>
       <ul><li data-i18n="tr1"></li><li data-i18n="tr2"></li><li data-i18n="tr3"></li></ul>
-      <a class="btn" style="margin-top:16px;justify-content:center" href="https://bit.ly/4zW7V61" target="_blank" rel="noopener"><span class="t1" data-i18n="dl"></span></a></div>
+      <a class="btn" style="margin-top:16px;justify-content:center" href="https://bit.ly/4hZKscA" target="_blank" rel="noopener"><span class="t1" data-i18n="dl"></span></a></div>
     <div class="card hl"><div class="tagline" data-i18n="lcT"></div><h3>BusinessOS License</h3>
       <div class="price"><div class="row"><b>Rp 499.000</b><small data-i18n="perPc"></small></div><div class="row"><b>$49.99</b><small data-i18n="perPcI"></small></div></div>
       <ul><li data-i18n="lc1"></li><li data-i18n="lc2"></li><li data-i18n="lc3"></li><li data-i18n="lc4"></li></ul>
@@ -228,7 +233,7 @@ footer{padding:28px 0 40px;color:var(--muted);font-size:13px;border-top:1px soli
           <option value="BusinessOS" selected>Sofhia BusinessOS</option><option value="OCR">Android Photo to Text (OCR)</option></select></label>
       <label><span data-i18n="fCode"></span><textarea id="fCode" spellcheck="false" placeholder="XXXX-XXXX-XXXX-XXXX"></textarea></label>
       <p class="hint" id="fErr" role="alert" style="color:var(--amber)"></p>
-      <button type="button" class="btn" id="sendBtn" style="justify-content:center"><span class="t1" data-i18n="send"></span></button>
+      <div class="sendrow"><button type="button" class="btn" id="sendBtn" style="justify-content:center"><span class="t1" data-i18n="send"></span></button><div class="mailto"><span class="lb" data-i18n="mailTo"></span><div class="ad"><code id="mailAddr">putraadiatma.64bit@gmail.com</code><button type="button" class="mini" id="copyAddr" data-i18n="copyAddr"></button></div></div></div>
       <button type="button" class="btn alt" id="copyBtn" style="justify-content:center"><span class="t1" data-i18n="copy"></span></button>
       <p class="hint" data-i18n="fmNote"></p>
     </div>
@@ -304,7 +309,7 @@ s3:"Lakukan pembayaran",s3d:"Bayar sesuai harga lisensi. Detail pembayaran dibal
 s4:"Terima kode aktivasi",s4d:"Setelah pembayaran terkonfirmasi, kode aktivasi dikirim ke email Anda. Masukkan ke aplikasi.",
 fmH:"Kirim kode perangkat",fmL:"Isi data berikut. Tombol kirim akan membuka aplikasi email Anda dengan pesan siap kirim.",
 fName:"Nama / nama perusahaan",fEmail:"Email Anda",fProd:"Produk",fCode:"Kode perangkat (dari aplikasi)",
-send:"Kirim lewat email",copy:"Salin pesan",fmNote:"Kode aktivasi hanya berlaku untuk perangkat yang kodenya Anda kirim.",
+send:"Kirim lewat email",mailTo:"Kirim manual ke email ini (Gmail dll.):",copyAddr:"Salin alamat",addrOk:"Tersalin",copy:"Salin pesan",fmNote:"Kode aktivasi hanya berlaku untuk perangkat yang kodenya Anda kirim.",
 err:"Mohon isi nama, email, dan kode perangkat.",copied:"Pesan disalin",
 mailSub:"Permintaan Kode Aktivasi",mailBody:(n,e,p,c)=>`Halo,\n\nSaya ingin mengaktifkan lisensi ${p}.\n\nNama: ${n}\nEmail: ${e}\nKode perangkat:\n${c}\n\nTerima kasih.`,
 acH:"Akun default untuk mencoba",acL:"Gunakan akun berikut untuk masuk ke Sofhia BusinessOS setelah Anda mengunduh dan memasangnya.",
@@ -351,7 +356,7 @@ s3:"Make the payment",s3d:"Pay the license price. Payment details are sent back 
 s4:"Receive your activation code",s4d:"Once payment is confirmed, the activation code is emailed to you. Enter it in the app.",
 fmH:"Send your device code",fmL:"Fill in the details. The send button opens your email app with a ready-to-send message.",
 fName:"Name / company name",fEmail:"Your email",fProd:"Product",fCode:"Device code (from the app)",
-send:"Send by email",copy:"Copy message",fmNote:"The activation code only works on the device whose code you sent.",
+send:"Send by email",mailTo:"Or send manually to this email (Gmail etc.):",copyAddr:"Copy address",addrOk:"Copied",copy:"Copy message",fmNote:"The activation code only works on the device whose code you sent.",
 err:"Please fill in your name, email, and device code.",copied:"Message copied",
 mailSub:"Activation Code Request",mailBody:(n,e,p,c)=>`Hello,\n\nI would like to activate a license for ${p}.\n\nName: ${n}\nEmail: ${e}\nDevice code:\n${c}\n\nThank you.`,
 acH:"Default accounts to try it out",acL:"Use these accounts to sign in to Sofhia BusinessOS after you download and install it.",
@@ -414,6 +419,8 @@ sendBtn.addEventListener('click',()=>{const m=msg();if(m)location.href=`mailto:$
 copyBtn.addEventListener('click',async()=>{const m=msg();if(!m)return;
   try{await navigator.clipboard.writeText(`To: ${MAIL}\n${m.sub}\n\n${m.body}`);fErr.textContent=T[cur].copied}
   catch(e){fCode.select()}});
+
+copyAddr.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(MAIL);copyAddr.textContent=T[cur].addrOk;setTimeout(()=>{copyAddr.textContent=T[cur].copyAddr},1500)}catch(e){const r=document.createRange();r.selectNodeContents(mailAddr);const s=getSelection();s.removeAllRanges();s.addRange(r)}});
 
 /* cycle diagram */
 const stage=document.getElementById('stage'),svg=document.getElementById('loopSvg'),pathEl=document.getElementById('loopPath');
